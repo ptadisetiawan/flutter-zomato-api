@@ -53,7 +53,7 @@ class _SearchItemState extends State<SearchItem> {
                     color: Colors.black54,
                     fontWeight: FontWeight.w600),
                 onSubmitted: (value) =>
-                    widget.onSubmit != null ? widget.onSubmit : {},
+                    widget.onSubmit != null ? widget.onSubmit(value) : {},
                 decoration: InputDecoration(
                     hintText: "Cari restoran",
                     border: InputBorder.none,

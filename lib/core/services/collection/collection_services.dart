@@ -14,7 +14,6 @@ class CollectionServices extends BaseServices {
         context,
         useToken: true);
     var collectionList = new List<CollectionModel>();
-    print(resp.toString());
     //* Check if response contains collection list
     if (resp.containsKey("collections")) {
       resp["collections"].forEach((val) {

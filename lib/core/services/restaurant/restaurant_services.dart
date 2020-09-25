@@ -42,6 +42,7 @@ class RestaurantServices extends BaseServices {
         restaurantList.add(RestaurantModel.fromJson(val["restaurant"]));
       });
     }
+    return restaurantList;
   }
 
   Future<List<RestaurantModel>> getAllByCollection(

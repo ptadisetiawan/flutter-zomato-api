@@ -56,7 +56,6 @@ class RestaurantProvider extends ChangeNotifier {
     setOnSearch(true);
     // clear previous history
     await clearRestaurantSearch();
-
     // then fetch new keyword
     final locationProv = Provider.of<LocationProvider>(context, listen: false);
     _restaurantByKeywordList = await restaurantServices.getAllByKeyword(
@@ -64,6 +63,7 @@ class RestaurantProvider extends ChangeNotifier {
         locationProv.latitude.toString(),
         locationProv.longitude.toString(),
         context);
+    print(_restaurantByKeywordList.toString());
     // set search state to deactive
     setOnSearch(false);
     notifyListeners();

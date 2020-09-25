@@ -23,7 +23,7 @@ class LocationProvider extends ChangeNotifier {
   LocationUtils locationUtils = locator<LocationUtils>();
 
   /* 
-  funtion field
+  function field
    */
 
   // function to load location from GPS and address
@@ -33,7 +33,11 @@ class LocationProvider extends ChangeNotifier {
     _address = await locationUtils.getAdress();
     _latitude = locationUtils.latitude;
     _longitude = locationUtils.longitude;
-    print(_address);
+    print(_address +
+        "\n latitude : " +
+        _latitude.toString() +
+        "\n longitude : " +
+        _longitude.toString());
     notifyListeners();
   }
 }

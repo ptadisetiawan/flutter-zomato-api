@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodfinder/core/models/collection_model.dart';
 import 'package:foodfinder/core/models/restaurant_model.dart';
+import 'package:foodfinder/core/services/restaurant/restaurant_by_collection_screen.dart';
 import 'package:foodfinder/ui/screens/home/home_screen.dart';
 import 'package:foodfinder/ui/screens/restaurant/restaurant_search_screen.dart';
 
@@ -29,9 +30,9 @@ class RouterGenerator {
         break;
       case routeRestaurantByCollection:
         if (args is CollectionModel) {
-          return MaterialPageRoute(builder: (_) => HomeScreen());
-          // return MaterialPageRoute(
-          //     builder: (_) => RestaurantByCollectionScreen(restaurant: args));
+          // return MaterialPageRoute(builder: (_) => HomeScreen());
+          return MaterialPageRoute(
+              builder: (_) => RestaurantByCollectionScreen(collection: args));
         }
         break;
     }
