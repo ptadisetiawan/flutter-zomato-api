@@ -27,7 +27,7 @@ class RestaurantProvider extends ChangeNotifier {
       _restaurantCollectionList;
   // Review list by restaurant
   List<ReviewModel> _reviewList;
-  List<ReviewModel> get reviewLiat => _reviewList;
+  List<ReviewModel> get reviewList => _reviewList;
 
   // handle event search
   bool _onSearch = false;
