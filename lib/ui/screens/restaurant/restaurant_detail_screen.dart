@@ -29,6 +29,7 @@ class _RestaurantDetailBodyState extends State<RestaurantDetailBody> {
   Color iconBackColor = Colors.white;
   Color textColor = Colors.white;
   Color backgroundColor = Colors.transparent;
+
   ScrollController scrollController;
   _scrollListener() {
     if (scrollController.offset >= 100) {
@@ -50,19 +51,18 @@ class _RestaurantDetailBodyState extends State<RestaurantDetailBody> {
   void initState() {
     super.initState();
     scrollController = new ScrollController();
-    scrollController.addListener(_scrollListener());
+    scrollController.addListener(_scrollListener);
   }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
+      children: <Widget>[
         SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          controller: scrollController,
-          child: _content(),
-        ),
-        _appBar()
+            physics: BouncingScrollPhysics(),
+            controller: scrollController,
+            child: _content()),
+        _appBar(),
       ],
     );
   }
@@ -117,7 +117,7 @@ class _RestaurantDetailBodyState extends State<RestaurantDetailBody> {
         children: [
           _imageCover(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

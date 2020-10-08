@@ -14,12 +14,12 @@ class ReviewServices extends BaseServices {
 
     var reviewList = new List<ReviewModel>();
     // check if response contains restaurant list
-    if (resp.containsKey("restaurants")) {
-      resp["user_reviews"].forEach((val) {
-        reviewList.add(ReviewModel.fromJson(val["review"]));
-      });
-    }
-
+    // if (resp.containsKey("restaurants")) {
+    resp["user_reviews"].forEach((val) {
+      reviewList.add(ReviewModel.fromJson(val["review"]));
+    });
+    // }
+    // print(reviewList.toString());
     return reviewList;
   }
 }
